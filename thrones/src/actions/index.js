@@ -8,7 +8,7 @@ export const fetchGoT = () => dispatch => {
     dispatch({ type: START_FETCH });
     axios
       .get(
-        'https://anapioficeandfire.com/api/characters/583'
+        'https://cors-anywhere.herokuapp.com/https://anapioficeandfire.com/api/characters'
       )
       .then(res => {
           console.log('fetch got data', res.data)

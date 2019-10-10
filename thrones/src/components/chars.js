@@ -7,17 +7,26 @@ const Chars = (props) => {
     useEffect(() => {
         props.fetchGoT()
     }, []);
-    
+
+    if (props.isFetching) {
+        return <h3>Loading Ice and Fire...</h3>
+    }
+
     return (
         <div>
-           <Char />
+            {props.error && <p>{props.error}</p>}
+            {props.gOT.map(got => (
+                <Char key={got.url}  got={got}/>
+            ))}
+
         </div>
     )
 }
 
 
 const mapStateToProps = state => {
-    return{
+    console.log('chars state', state)
+    return {
         gOT: state.gOT,
         isFetching: state.isFetching,
         error: state.error
