@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Char from './Char'
 import { connect } from 'react-redux'
-const Chars = () => {
+import { fetchGoT } from '../actions'
+const Chars = (props) => {
     return (
         <div>
            <Char />
-            all
         </div>
     )
 }
@@ -19,4 +19,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, null)(Chars)
+export default connect(mapStateToProps, { fetchGoT })(Chars)

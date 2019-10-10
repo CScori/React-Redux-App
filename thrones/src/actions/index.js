@@ -8,7 +8,7 @@ export const fetchGoT = () => dispatch => {
     dispatch({ type: START_FETCH });
     axios
       .get(
-        ''
+        'https://anapioficeandfire.com/api/characters/583'
       )
       .then(res => {
           console.log('fetch got data', res.data)
