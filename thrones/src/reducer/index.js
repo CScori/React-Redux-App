@@ -1,32 +1,34 @@
-import { } from '../actions'
+import { START_FETCHING, FETCH_SUCCESS, FETCH_FAILURE } from '../actions'
+
 const initialState = {
     gOT: [],
     isFetching: false,
     error: ''
 }
 
-export const reducer = (state = initialState, action) = {
-    switch(action.type) {
-        case START
-    return {
-            ...state,
-            isFetching: true,
-            error: ''
+export const reducer = (state = initialState, action) => {
+    switch (action.type) {
+      case START_FETCHING:
+        return {
+          ...state,
+          isFetching: true,
+          error: ''
+        };
+      case FETCH_SUCCESS:
+        return {
+          ...state,
+          isFetching: false,
+          error: '',
+          gOT: action.payload
+        };
+      case FETCH_FAILURE:
+        return {
+          ...state,
+          error: action.payload,
+          isFetching: false
+        };
+      default:
+        return state;
     }
-    case FETCH
-    return {
-            ...state,
-            isFetching: false,
-            error: ''
-        gOT: action.payload
-        }
-    case FETCH
-    return {
-            ...state,
-            isFetching: false,
-            error: action.payload
-        }
-    default:
-        return state
-    }
-}
+  };
+  
