@@ -1,8 +1,13 @@
 import React, { useEffect } from 'react'
-import Char from './Char'
 import { connect } from 'react-redux'
 import { fetchGoT } from '../actions'
+import Char from './Char'
+
 const Chars = (props) => {
+    useEffect(() => {
+        props.fetchGoT()
+    }, []);
+    
     return (
         <div>
            <Char />
