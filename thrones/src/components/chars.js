@@ -13,7 +13,9 @@ const chars = () => {
 
 const mapStateToProps = state => {
     return{
-        gOT: state.thrones
+        gOT: state.gOT,
+        isFetching: state.isFetching,
+        error: state.error
     }
 }
 

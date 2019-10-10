@@ -1,6 +1,6 @@
 import React from 'react'
 
-const char = () => {
+const char = props => {
     return (
         <div>
             single
