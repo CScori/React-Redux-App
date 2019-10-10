@@ -13,7 +13,7 @@ const chars = () => {
 
 const mapStateToProps = state => {
     return{
-        thrones: state.thrones
+        gOT: state.thrones
     }
 }
 
