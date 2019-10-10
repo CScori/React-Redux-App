@@ -5,7 +5,7 @@ export const FETCH_SUCCESS = 'FETCH_SUCCESS'
 export const FETCH_FAILURE = 'FETCH_FAILURE'
 
 export const fetchGoT = () => dispatch => {
-    dispatch({ type: START_FETCHING });
+    dispatch({ type: START_FETCH });
     axios
       .get(
         ''

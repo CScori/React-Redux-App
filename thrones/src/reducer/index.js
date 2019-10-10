@@ -1,14 +1,13 @@
-import { START_FETCHING, FETCH_SUCCESS, FETCH_FAILURE } from '../actions'
+import { START_FETCH, FETCH_SUCCESS, FETCH_FAILURE } from '../actions'
 
 const initialState = {
     gOT: [],
     isFetching: false,
     error: ''
 }
-
-export const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
     switch (action.type) {
-      case START_FETCHING:
+      case START_FETCH:
         return {
           ...state,
           isFetching: true,
@@ -31,4 +30,4 @@ export const reducer = (state = initialState, action) => {
         return state;
     }
   };
-  
+  export default reducer
